@@ -5,10 +5,6 @@
 #  mode '640'
 #end
 
-package 'chef-dk' do
-  action :install
-end
-
 cookbook_file '/etc/chef/solo.rb' do
   source 'solo.rb'
   owner 'root'
