@@ -1,6 +1,6 @@
 {
   "name": "student",
-  "chef_environment": "production",
+  "chef_environment": "prod",
   "normal": {
     "tags": [
     ]

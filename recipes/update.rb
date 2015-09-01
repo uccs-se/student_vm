@@ -10,7 +10,7 @@ cron 'update' do
   command %W{
          /usr/bin/git -C #{node['chef']['home']} fetch --all &&
          /usr/bin/git -C #{node['chef']['home']} reset --hard origin/#{node.chef_environment} &&
-         /usr/bin/berks install &&
+         cd #{node['chef']['home']} && /usr/bin/berks install &&
          /usr/bin/chef-solo -E #{node.chef_environment}
   }.join(' ')
 end
