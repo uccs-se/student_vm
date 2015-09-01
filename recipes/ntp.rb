@@ -1,1 +1,1 @@
-include_recipe 'ntp'
+include_recipe 'ntp::default'

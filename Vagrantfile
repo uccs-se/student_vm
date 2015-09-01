@@ -11,21 +11,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.hostname = 'role-student-vm-berkshelf'
+  config.vm.hostname = 'student-vm-berkshelf'
 
   # Set the version of chef to install using the vagrant-omnibus plugin
   # NOTE: You will need to install the vagrant-omnibus plugin:
   #
   #   $ vagrant plugin install vagrant-omnibus
   #
-  if Vagrant.has_plugin?("vagrant-omnibus")
+  if Vagrant.has_plugin?('vagrant-omnibus')
     config.omnibus.chef_version = 'latest'
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
   # If this value is a shorthand to a box in Vagrant Cloud then
   # config.vm.box_url doesn't need to be specified.
-  config.vm.box = 'chef/ubuntu-14.04'
+  config.vm.box = 'ubuntu/precise64'
 
 
   # Assign this VM to a host-only network IP, allowing you to access it
@@ -47,13 +47,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
+
+  config.vm.provider :virtualbox do |vb|
+    # boot with headless mode
+    vb.gui = false
+
+    # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ['modifyvm', :id, '--memory', '1024']
+  end
+
+  # config.vm.provider :docker do |dock|
+  #   dock.image = 'ubuntu:trusty'
   #
-  # config.vm.provider :virtualbox do |vb|
-  #   # Don't boot with headless mode
-  #   vb.gui = true
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
   # end
   #
   # View the documentation for the provider you're using for more

@@ -6,6 +6,6 @@
     ]
   },
   "run_list": [
-    "role[student-vm]"
+    "recipe[student-vm]"
   ]
 }
