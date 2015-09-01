@@ -1,0 +1,8 @@
+include_recipe 'student_vm::git'
+include_recipe 'student_vm::rvm'
+include_recipe 'student_vm::ntp'
+include_recipe 'student_vm::chef_solo'
+include_recipe 'student_vm::update'
+include_recipe 'student_vm::xfce'
+include_recipe 'student_vm::rdp'
+# include_recipe 'student_vm::rubymine'
