@@ -89,7 +89,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-      'recipe[student_vm::default]'
+      'recipe[workstation::default]'
     ]
   end
 end

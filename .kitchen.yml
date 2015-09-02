@@ -11,5 +11,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[student_vm::default]
+      - recipe[workstation::default]
     attributes:
