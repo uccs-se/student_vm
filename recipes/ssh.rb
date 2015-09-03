@@ -1,2 +1,2 @@
-# provision ssh
-include_recipe 'openssh'
+include_recipe 'ssh'
+include_recipe 'sshd'

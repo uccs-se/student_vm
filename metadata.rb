@@ -9,10 +9,16 @@ license           'MIT'
 provides          'workstation::default'
 supports          'ubuntu' '>= 12.04'
 
-depends 'ntp'
-depends 'openssh'
-depends 'chef-solo'
 depends 'chef-dk'
+depends 'chef-solo'
+depends 'git'
+depends 'ntp'
+depends 'ssh'
+depends 'sshd'
+depends 'chef_rvm'
+depends 'rubymine'
+depends 'xfce4'
+depends 'xrdp'
 
 long_description <<-EOH
 = DESCRIPTION:

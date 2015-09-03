@@ -1,3 +1,5 @@
+group 'chef'
+
 user 'chef' do
   comment 'The user for chef to do all of it\'s work in.'
   group node['chef']['group']
@@ -5,7 +7,6 @@ user 'chef' do
   shell node['chef']['shell']
   #action [:create, :lock]
 end
-
 
 directory node['chef']['home'] do
   recursive true

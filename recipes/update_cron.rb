@@ -7,9 +7,9 @@ cron 'update' do
   user    node['chef']['user']
   shell   node['chef']['shell']
   command %W{
-         /usr/bin/git -C #{node['chef']['home']} fetch --all &&
-         /usr/bin/git -C #{node['chef']['home']} reset --hard origin/#{node.chef_environment} &&
-         cd #{node['chef']['home']} && /usr/bin/berks install &&
+         /usr/bin/git clone -b dev #{node['git']['repo']} #{default['chef']['repo']} &&
+         cd #{default['chef']['repo']} && /usr/bin/berks install &&
+         knife solo upload localhost &&
          /usr/bin/chef-solo -E #{node.chef_environment} -U #{node['chef']['user']}
           }.join(' ')
 end
