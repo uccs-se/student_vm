@@ -7,8 +7,8 @@ cron 'update' do
   user    node['chef']['user']
   shell   node['chef']['shell']
   command %W{
-         /usr/bin/git clone -b dev #{node['git']['repo']} #{default['chef']['repo']} &&
-         cd #{default['chef']['repo']} && /usr/bin/berks install &&
+         /usr/bin/git clone -b dev #{node['git']['repo']} #{node['chef']['repo']} &&
+         cd #{node['chef']['repo']} && /usr/bin/berks install &&
          knife solo upload localhost &&
          /usr/bin/chef-solo -E #{node.chef_environment} -U #{node['chef']['user']}
           }.join(' ')
