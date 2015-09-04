@@ -3,7 +3,7 @@ include_recipe 'workstation::user_ensign'
 
 node.override['chef_rvm'] = {
   users: {
-    ubuntu: {
+    ensign: {
       rubies: {
         '2.2.3' => 'install',
       },

@@ -1,10 +1,11 @@
 group 'ensign'
 
 user 'ensign' do
-  comment 'The student account.'
+  comment 'Ensign'
   group   'ensign'
   home    '/home/ensign'
   shell   '/bin/bash'
+  password '$1$mBq6x0Mn$Ux6mnt.wvIGCcWMvzIiQt/'
 end
 
 directory '/home/ensign' do

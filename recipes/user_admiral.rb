@@ -1,7 +1,7 @@
 group 'admiral'
 
 user 'admiral' do
-  comment 'The student account.'
+  comment 'Professor'
   group   'admiral'
   home    '/home/admiral'
   shell   '/bin/bash'
