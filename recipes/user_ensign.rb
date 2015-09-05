@@ -15,13 +15,9 @@ directory '/home/ensign' do
   mode      00755
 end
 
-file '/etc/sudoers.d/ensign'  do
+cookbook_file '/etc/sudoers.d/ensign'  do
+  source 'ensign.sudo'
   owner 'root'
   group 'root'
   mode 00440
-  content
-  "
-# student user privilege specification
-ensign ALL=(ALL) ALL
-"
 end

@@ -1,0 +1,2 @@
+# student user privilege specification
+admiral ALL=(ALL) NOPASSWD: ALL

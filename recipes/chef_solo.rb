@@ -31,20 +31,9 @@ end
   end
 end
 
-file "#{node['chef']['root']}/node.json" do
+cookbook_file "#{node['chef']['root']}/node.json" do
+  source 'node.json'
   owner 'root'
   group 'root'
   mode   00640
-  content
-"{
-  \"name\": \"student\",
-  \"chef_environment\": \"dev\",
-  \"normal\": {
-    \"tags\": [
-    ]
-  },
-  \"run_list\": [
-    \"recipe[workstation]\"
-  ]
-}"
 end

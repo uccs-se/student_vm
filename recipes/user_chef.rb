@@ -15,15 +15,11 @@ directory node['chef']['home'] do
   mode 00750
 end
 
-file '/etc/sudoers.d/chef'  do
+cookbook_file '/etc/sudoers.d/chef'  do
+  source 'chef.sudo'
   owner 'root'
   group 'root'
   mode 00440
-  content
-"
-# chef-solo privilege specification
-#{node['chef']['user']} ALL=(ALL) NOPASSWD: /usr/bin/chef-solo
-"
 end
 
 

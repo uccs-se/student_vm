@@ -14,13 +14,9 @@ directory '/home/admiral' do
   mode      00755
 end
 
-file '/etc/sudoers.d/admiral'  do
+cookbook_file '/etc/sudoers.d/admiral'  do
+  source 'admiral.sudo'
   owner 'root'
   group 'root'
   mode 00440
-  content
-  "
-# student user privilege specification
-admiral ALL=(ALL) NOPASSWD: ALL
-"
 end
