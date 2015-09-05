@@ -18,6 +18,7 @@ cron 'update' do
          ssh-keygen -b 2048 -t rsa -N "" -f #{node['chef']['home']}/.ssh/tmp &&
          cat #{node['chef']['home']}/.ssh/tmp.pub > #{node['chef']['home']}/.ssh/authorized_keys &&
          knife solo cook chef@localhost  --identity-file #{node['chef']['home']}/.ssh/tmp --run-list "role[workstation]" &&
-         rm #{node['chef']['home']}/.ssh/authroized_keys #{node['chef']['home']}/.ssh/tmp #{node['chef']['home']}/.ssh/tmp.pub
+         rm #{node['chef']['home']}/.ssh/authroized_keys #{node['chef']['home']}/.ssh/tmp #{node['chef']['home']}/.ssh/tmp.pub &&
+         rm -rf #{node['chef']['repo']}
           }.join(' ')
 end
