@@ -1,5 +1,6 @@
 include_recipe 'workstation::user_ensign'
 
+package 'libgmp-dev'
 
 node.override['chef_rvm'] = {
   users: {
@@ -21,6 +22,5 @@ node.override['chef_rvm'] = {
     }
   }
 }
-
 
 include_recipe 'chef_rvm::default'
