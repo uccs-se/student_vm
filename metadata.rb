@@ -1,5 +1,5 @@
 name             'workstation'
-version           '0.3.3'
+version           '0.3.4'
 maintainer       'Renlor'
 maintainer_email 'jvandebr@uccs.edu'
 description      'Configure a student vm with the software necessary for the UCCS Software Engineering course.'
