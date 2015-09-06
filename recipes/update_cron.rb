@@ -13,7 +13,7 @@ cron 'update' do
   user    node['chef']['user']
   shell   node['chef']['shell']
   command %W{
-         /usr/bin/git clone -b dev #{node['git']['repo']} #{node['chef']['repo']} &&
+         git clone -b dev #{node['git']['repo']} #{node['chef']['repo']} &&
          cd #{node['chef']['repo']} && /usr/bin/berks install &&
          ssh-keygen -b 2048 -t rsa -N "" -f #{node['chef']['home']}/.ssh/tmp &&
          cat #{node['chef']['home']}/.ssh/tmp.pub > #{node['chef']['home']}/.ssh/authorized_keys &&
