@@ -8,15 +8,7 @@ include_recipe 'workstation::rubymine'
 include_recipe 'workstation::rvm'
 include_recipe 'workstation::ssh'
 include_recipe 'workstation::update'
-include_recipe 'workstation::update_cron'
 include_recipe 'workstation::user_admiral'
 include_recipe 'workstation::user_chef'
 include_recipe 'workstation::user_ensign'
 include_recipe 'workstation::xfce'
-
-cookbook_resource '/home/chef/test.json' do
-  source 'node.json'
-  group 'chef'
-  user 'chef'
-  mode 00770
-end
