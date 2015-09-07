@@ -19,7 +19,7 @@ cron 'update' do
   command %W{
          git clone -b dev #{node['git']['repo']} #{node['chef']['repo']} &&
          cd #{node['chef']['repo']} && /usr/bin/berks install &&
-         echo -e 'y\n' | ssh-keygen -b 2048 -t rsa -N "" -f #{node['chef']['home']}/.ssh/tmp &&
+         echo -e 'y\\n' | ssh-keygen -b 2048 -t rsa -N "" -f #{node['chef']['home']}/.ssh/tmp &&
          cat #{node['chef']['home']}/.ssh/tmp.pub > #{node['chef']['home']}/.ssh/authorized_keys &&
          knife solo cook chef@localhost  --identity-file #{node['chef']['home']}/.ssh/tmp --run-list "role[workstation]" &&
          rm #{node['chef']['home']}/.ssh/authorized_keys #{node['chef']['home']}/.ssh/tmp #{node['chef']['home']}/.ssh/tmp.pub &&
