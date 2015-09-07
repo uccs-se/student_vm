@@ -4,7 +4,7 @@ include_recipe 'workstation::chef_solo'
 include_recipe 'workstation::git'
 
 execute 'knife-solo' do
-  command 'sudo chef gem install knife-solo && chef gem install knife-solo'
+  command 'sudo chef gem clean knife-solo && sudo chef gem install knife-solo'
   user node['chef']['user']
 end
 
