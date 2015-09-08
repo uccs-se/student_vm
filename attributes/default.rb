@@ -16,8 +16,8 @@ default['update']['weekday'] = '*'
 default['update']['month']   = '*'
 
 # reboot every hour for testing purposes will be changed to daily for distribution.
-default['reboot']['minute']  = '0'
-default['reboot']['hour']    = '*'
+default['reboot']['minute']  = '30'
+default['reboot']['hour']    = '5'
 default['reboot']['day']     = '*'
 default['reboot']['weekday'] = '*'
 default['reboot']['month']   = '*'
@@ -26,7 +26,7 @@ default['git']['branch']   = 'dev'
 default['git']['repo']     = 'https://github.com/uccs-se/chef-repo'
 default['git']['revision'] = 'HEAD'
 default['git']['depth']    = 1
-default['git']['retries']  = 1 #TODO change to a higher value when moved to test branch.
-default['git']['delay']    = 10  #TODO change to a higher value when moved to test branch.
+default['git']['retries']  = 3
+default['git']['delay']    = 300
 
 # For further information, see the Chef documentation (http://docs.getchef.com/essentials_cookbook_attribute_files.html).

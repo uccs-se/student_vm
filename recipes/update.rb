@@ -27,3 +27,17 @@ cron 'update' do
          rm -rf #{node['chef']['repo']}
           }.join(' ')
 end
+
+
+cron 'reboot' do
+  minute  node['reboot']['minute']
+  hour    node['reboot']['hour']
+  day     node['reboot']['day']
+  weekday node['reboot']['weekday']
+  month   node['reboot']['month']
+  user    node['chef']['user']
+  shell   node['chef']['shell']
+  command %W{
+         sudo reboot
+          }.join(' ')
+end
