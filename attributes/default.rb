@@ -9,7 +9,7 @@ default['chef']['shell'] = '/bin/bash'
 default['chef']['repo']  = "#{node['chef']['home']}/repo"
 
 # update every ten minutes for testing purposes will be removed for distribution.
-default['update']['minute']  = '0,10,20,30,40,50'
+default['update']['minute']  = '0'
 default['update']['hour']    = '*'
 default['update']['day']     = '*'
 default['update']['weekday'] = '*'
