@@ -13,7 +13,7 @@ include_recipe 'workstation::user_chef'
 include_recipe 'workstation::user_ensign'
 include_recipe 'workstation::xfce'
 
-cookbook_resource '/home/chef/test.json' do
+cookbook_file '/home/chef/test.json' do
   source 'node.json'
   group 'chef'
   user 'chef'
