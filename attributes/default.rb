@@ -22,7 +22,7 @@ default['reboot']['day']     = '*'
 default['reboot']['weekday'] = '*'
 default['reboot']['month']   = '*'
 
-default['git']['branch']   = 'dev'
+default['git']['branch']   = 'test'
 default['git']['repo']     = 'https://github.com/uccs-se/chef-repo'
 default['git']['revision'] = 'HEAD'
 default['git']['depth']    = 1
