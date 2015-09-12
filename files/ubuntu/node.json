@@ -1,6 +1,10 @@
 {
   "name": "student",
+<<<<<<< HEAD
   "chef_environment": "test",
+=======
+  "chef_environment": "prod",
+>>>>>>> 5bc6799ed3ca9e9d7868020a498c4187d6e78c18
   "normal": {
     "tags": [
     ]

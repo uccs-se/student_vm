@@ -10,19 +10,14 @@ default['chef']['repo']  = "#{node['chef']['home']}/repo"
 
 # update every ten minutes for testing purposes will be removed for distribution.
 default['update']['minute']  = '0'
-default['update']['hour']    = '*'
+default['update']['hour']    = '1,3,5,7,9,11,13,15,17,19,21,23'
 default['update']['day']     = '*'
 default['update']['weekday'] = '*'
-default['update']['month']   = '*'
 
 # reboot every hour for testing purposes will be changed to daily for distribution.
-default['reboot']['minute']  = '30'
-default['reboot']['hour']    = '5'
-default['reboot']['day']     = '*'
-default['reboot']['weekday'] = '*'
-default['reboot']['month']   = '*'
+default['reboot']['time'] = '05:30'
 
-default['git']['branch']   = 'test'
+default['git']['branch']   = 'dev'
 default['git']['repo']     = 'https://github.com/uccs-se/chef-repo'
 default['git']['revision'] = 'HEAD'
 default['git']['depth']    = 1

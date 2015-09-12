@@ -37,8 +37,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 3389, host: 44444
+  config.vm.network "forwarded_port", guest: 3389, host: 33890
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 443, host: 4430
+  config.vm.network "forwarded_port", guest: 80, host: 8000
+  config.vm.network "forwarded_port", guest: 22, host: 2222
 
+  config.vm.network :public_network
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
@@ -49,12 +54,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
 
-  config.vm.provider :virtualbox do |vb|
+  config.vm.provider :virtualbox do |v|
     # boot with headless mode
-    vb.gui = false
+    v.gui = false
 
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ['modifyvm', :id, '--memory', '1024']
+    v.customize ['modifyvm', :id, '--memory', '1024']
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
   # config.vm.provider :docker do |dock|

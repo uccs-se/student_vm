@@ -1,5 +1,3 @@
-include_recipe 'chef-solo::default'
-
 directory '/etc/chef' do
   owner 'root'
   group 'root'
@@ -37,3 +35,5 @@ cookbook_file "#{node['chef']['root']}/node.json" do
   group 'root'
   mode   00640
 end
+
+include_recipe 'chef-solo::default'
