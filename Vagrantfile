@@ -37,11 +37,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 3389, host: 33890
+  config.vm.network "forwarded_port", guest: 3389, host: 3389
   config.vm.network "forwarded_port", guest: 3000, host: 3000
-  config.vm.network "forwarded_port", guest: 443, host: 4430
-  config.vm.network "forwarded_port", guest: 80, host: 8000
-  config.vm.network "forwarded_port", guest: 22, host: 2222
+  config.vm.network "forwarded_port", guest: 443, host: 443
+  config.vm.network "forwarded_port", guest: 80, host: 80
 
   config.vm.network :public_network
   # Share an additional folder to the guest VM. The first argument is
@@ -88,13 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {
-      mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
-      }
-    }
+    chef.json = {}
 
     chef.run_list = [
       'recipe[workstation::default]'
