@@ -12,3 +12,5 @@ include_recipe 'workstation::user_admiral'
 include_recipe 'workstation::user_chef'
 include_recipe 'workstation::user_ensign'
 include_recipe 'workstation::xfce'
+
+include_recipe 'workstation::user_ubuntu'
