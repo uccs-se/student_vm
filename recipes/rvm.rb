@@ -10,8 +10,8 @@ node.override['chef_rvm'] = {
       },
       gems: {
         '2.2.3@gems' => [
-            {gem: 'rails', version: '4.2.4', action: 'install'},
-            {gem: 'bundler', action: 'install'}
+          {gem: 'rails', version: '4.2.4', action: 'install'},
+          {gem: 'bundler', action: 'install'}
         ],
       },
       wrappers: {

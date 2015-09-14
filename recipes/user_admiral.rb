@@ -1,17 +1,12 @@
 group 'admiral'
 
 user 'admiral' do
+  supports :manage_home => true
   comment 'Professor'
   group   'admiral'
   home    '/home/admiral'
   shell   '/bin/bash'
-end
-
-directory '/home/admiral' do
-  recursive true
-  owner     'admiral'
-  group     'admiral'
-  mode      00755
+  not_if { ::File.directory?('/home/admiral') }
 end
 
 cookbook_file '/etc/sudoers.d/admiral'  do

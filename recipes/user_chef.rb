@@ -1,18 +1,12 @@
 group 'chef'
 
 user 'chef' do
+  supports :manage_home => true
   comment 'The user for chef to do all of it\'s work in.'
   group node['chef']['group']
   home node['chef']['home']
   shell node['chef']['shell']
-  #action [:create, :lock]
-end
-
-directory node['chef']['home'] do
-  recursive true
-  owner node['chef']['user']
-  group node['chef']['group']
-  mode 00750
+  not_if { ::File.directory?("#{node['chef']['home']}") }
 end
 
 cookbook_file '/etc/sudoers.d/chef'  do
