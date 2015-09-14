@@ -11,7 +11,7 @@ user 'ensign' do
 end
 
 cookbook_file '/etc/sudoers.d/ensign'  do
-  source 'ensign.sudo'
+  source 'sudoers.d/ensign'
   owner 'root'
   group 'root'
   mode 00440

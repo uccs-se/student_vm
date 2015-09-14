@@ -10,7 +10,7 @@ user 'admiral' do
 end
 
 cookbook_file '/etc/sudoers.d/admiral'  do
-  source 'admiral.sudo'
+  source 'sudoers.d/admiral'
   owner 'root'
   group 'root'
   mode 00440

@@ -10,7 +10,7 @@ user 'chef' do
 end
 
 cookbook_file '/etc/sudoers.d/chef'  do
-  source 'chef.sudo'
+  source 'sudoers.d/chef'
   owner 'root'
   group 'root'
   mode 00440
