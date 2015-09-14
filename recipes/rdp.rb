@@ -14,6 +14,8 @@ cookbook_file '/lib/systemd/system/xrdp-sesman.service' do
   mode   00644
 end
 
+execute 'sudo systemctl daemon-reload'
+
 service 'xrdp' do
   action [ :enable, :start ]
 end
