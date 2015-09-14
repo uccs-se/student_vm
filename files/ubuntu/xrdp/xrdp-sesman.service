@@ -6,7 +6,7 @@ StopWhenUnneeded=true
 [Service]
 Type=forking
 PIDFile=/var/run/xrdp-sesman.pid
-EnvironmentFile=/etc/xrdp/xrdp.ini
+EnvironmentFile=/etc/xrdp/sesman.ini
 ExecStart=/usr/sbin/xrdp-sesman $SESMAN_OPTIONS
 ExecStop=/usr/sbin/xrdp-sesman $SESMAN_OPTIONS --kill
 
