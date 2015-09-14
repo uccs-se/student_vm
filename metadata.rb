@@ -1,5 +1,5 @@
 name             'workstation'
-version          '0.3.16'
+version          '0.3.17'
 maintainer       'Renlor'
 maintainer_email 'jvandebr@uccs.edu'
 description      'Configure a student vm with the software necessary for the UCCS Software Engineering course.'
@@ -18,7 +18,6 @@ depends 'sshd'
 depends 'chef_rvm'
 depends 'rubymine'
 depends 'xfce4'
-depends 'xrdp'
 
 long_description <<-EOH
 = DESCRIPTION:
