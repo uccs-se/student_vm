@@ -10,10 +10,9 @@ default['update']['minute']  = '0'
 default['update']['hour']    = '1,3,5,7,9,11,13,15,17,19,21,23'
 default['update']['day']     = '*'
 default['update']['weekday'] = '*'
-default['update']['month']   = '*'
 
 # reboot every night.
-default['reboot']['time']    = '5:30'
+default['reboot']['time']   = '5:30'
 
 # git checkout information.
 default['git']['branch']   = 'prod'

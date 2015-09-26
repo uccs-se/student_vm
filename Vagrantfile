@@ -42,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 443, host: 4430, auto_correct: true
   config.vm.network "forwarded_port", guest: 80, host: 8000, auto_correct: true
 
+  config.vm.network :public_network
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
@@ -52,12 +53,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
 
-  config.vm.provider :virtualbox do |vb|
+  config.vm.provider :virtualbox do |v|
     # boot with headless mode
-    vb.gui = false
+    v.gui = false
 
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ['modifyvm', :id, '--memory', '1024']
+    v.customize ['modifyvm', :id, '--memory', '1024']
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
   # config.vm.provider :docker do |dock|
@@ -84,13 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {
-      mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
-      }
-    }
+    chef.json = {}
 
     chef.run_list = [
       'recipe[workstation::default]'

@@ -13,7 +13,6 @@ cron 'update' do
   hour    node['update']['hour']
   day     node['update']['day']
   weekday node['update']['weekday']
-  month   node['update']['month']
   user    node['chef']['user']
   shell   node['chef']['shell']
   command %W{
