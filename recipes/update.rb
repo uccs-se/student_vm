@@ -1,6 +1,7 @@
 include_recipe 'workstation::user_chef'
 include_recipe 'workstation::chef_dk'
 include_recipe 'workstation::chef_solo'
+include_recipe 'workstation::knife_solo'
 include_recipe 'workstation::git'
 
 execute 'knife-solo' do

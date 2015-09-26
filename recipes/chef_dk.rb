@@ -6,3 +6,4 @@ chef_dk 'chef_dk' do
   nightlies false
   global_shell_init true
 end
+
