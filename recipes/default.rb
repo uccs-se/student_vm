@@ -1,6 +1,7 @@
 
 include_recipe 'workstation::chef_dk'
 include_recipe 'workstation::chef_solo'
+include_recipe 'workstation::firefox'
 include_recipe 'workstation::git'
 include_recipe 'workstation::ntp'
 include_recipe 'workstation::rdp'
