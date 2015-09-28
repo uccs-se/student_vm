@@ -1,5 +1,2 @@
 
-package 'firefox' do
-  action :upgrade
-end
-
+package 'firefox'
