@@ -1,4 +1,6 @@
 
+include_recipe 'apt'
+
 include_recipe 'workstation::chef_dk'
 include_recipe 'workstation::chef_solo'
 include_recipe 'workstation::firefox'
