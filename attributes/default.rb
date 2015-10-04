@@ -15,7 +15,7 @@ default['update']['weekday'] = '*'
 default['reboot']['time']   = '5:30'
 
 # git checkout information.
-default['git']['branch']   = 'prod'
+default['git']['branch']   = 'master'
 default['git']['repo']     = 'https://github.com/uccs-se/chef-repo'
 default['git']['revision'] = 'HEAD'
 default['git']['depth']    = 1
